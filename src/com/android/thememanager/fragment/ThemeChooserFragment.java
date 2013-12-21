@@ -350,12 +350,17 @@ public class ThemeChooserFragment extends Fragment {
 
         @Override
         protected Boolean doInBackground(String... strings) {
-            ThemeUtils.addThemeEntryToDb("default", Globals.DEFAULT_SYSTEM_THEME, getActivity(), true);
-            String[] availableThemes = themeList(THEMES_PATH);
-            for (String themeId : availableThemes) {
-                ThemeUtils.addThemeEntryToDb(FileUtils.stripExtension(themeId),
-                        THEMES_PATH + "/" + themeId,
-                        getActivity(), false);
+            try {
+                ThemeUtils.addThemeEntryToDb("default", Globals.DEFAULT_SYSTEM_THEME,
+                        getActivity().getApplicationContext(), true);
+                String[] availableThemes = themeList(THEMES_PATH);
+                for (String themeId : availableThemes) {
+                    ThemeUtils.addThemeEntryToDb(FileUtils.stripExtension(themeId),
+                            THEMES_PATH + "/" + themeId,
+                            getActivity(), false);
+                }
+            } catch (NullPointerException e) {
+                return Boolean.FALSE;
             }
             return Boolean.TRUE;
         }

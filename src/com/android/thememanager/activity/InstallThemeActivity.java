@@ -142,7 +142,7 @@ public class InstallThemeActivity extends Activity implements LoaderManager.Load
         dismissDialog(DIALOG_PROGRESS);
         boolean result = ((Boolean)o).booleanValue();
         if (result == true) {
-            Intent intent = new Intent(InstallThemeActivity.this, ThemeManagerTabActivity.class);
+            Intent intent = new Intent(InstallThemeActivity.this, ThemeManagerActivity.class);
             startActivity(intent);
         }
         finish();

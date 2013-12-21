@@ -32,9 +32,9 @@
     <string name="applying_theme">Thema Anwenden ...</string>
     <string name="installing_theme">Installiere Thema...</string>
 
-    <string name="tab_themes">Lokal</string>
-    <string name="tab_mixer">Mischen</string>
-    <string name="tab_get_themes">Online</string>
+    <string name="installed_themes">Lokal</string>
+    <string name="theme_mixer">Mischen</string>
+    <string name="get_themes">Online</string>
 
     <string name="coming_soon">Bald verfügbar!</string>
 
